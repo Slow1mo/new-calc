@@ -1,0 +1,13 @@
+.App {
+    text-align: center
+}
+
+.Display {
+    height: 60xp;
+    background-color: aquamarine;
+    width: 100%
+}
+
+.result p {
+    font-size: 40px;
+}
