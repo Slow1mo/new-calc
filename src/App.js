@@ -11,45 +11,34 @@ class App extends React.Component {
 
     this.state = {
       result: "",
-      deci: false
     }
+  }  
+  containsChar = (res, char) => {
+    return res.indexOf(char) !== -1
   }
 
   onClick = button => {
     let res = this.state.result
     let operator = this.state.operator
+    if ( this.containsChar('/*+-', button) && this.containsChar('/*+-',res[res.length-1]))  {
+      this.setState({ result: res.substr(0, res.length-1) + button})
+      return
+    }
+
     if (button === "=") {
       this.calculate();
-      
     } else if (button === "Del") {
       this.setState({ result: this.state.result.slice(0, -1) })
     } else if (button === "Clear") {
       this.setState({ result: "" })
     } else if (this.state.result === "0" && button === "0") {
       this.setState({ result: '' + button })
-    /*} else if (button === "+" ||
-      button === "-" ||
-      button === "*" ||
-      button === "/") {
-      if (!this.state.operator) {
-        res += button
-        operator = true
-        this.setState({ deci: false })
-      } else {
-        const num = res.slice(0, res.length - 1)
-        res = num
-        res += button
-      }
-      this.setState({ result: res }) 
-    } else if (button === ".") {
-      if (!this.state.deci) {
-        res += "."
-        this.setState({ deci: true })
-      }
-      this.setState({ result: res }) */
-    }else if (/\./.test(button)){
-      res += button 
-      this.setState({result : res})
+    } else if (button === "." && res) {
+      const splits = res.split(/[\+\-\*\/]+/)
+        const split = splits[splits.length-1]
+        if(this.containsChar(split, '.')) return
+      res += "."
+      this.setState({ result: res })
     
     } else {
       this.setState({ result: this.state.result + button, operator })
