@@ -5,22 +5,22 @@ body {
 }
 
 .App {
-    text-align: center;
+    display: grid;
+    justify-content: center;
+    align-content: center;
 }
 
 .Display {
     background-color: rgb(127, 255, 212, 0.3);
     border-radius: 20px 20px 0 0;
-    display: flex;
     justify-content: center;
+    width: 379px;
     height: 80px;
     font-size: 30px;
     font-family: 'Dosis', sans-serif;
-    position: absolute;
-    left: 271px;
     top: 132px;
+    position: relative;
     align-items: flex-end;
-    justify-content: space-around;
     flex-direction: column;
     padding: 10px;
 }
