@@ -71,7 +71,7 @@ class App extends React.Component {
       <div className="App">
         <h1>Calculator</h1>
         <Display id="display" result={this.state.result || "0"} />
-        <Buttons onClick={this.onClick} />
+        <Buttons id="buttons" onClick={this.onClick} />
       </div>
     );
   }

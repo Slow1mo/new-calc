@@ -1,13 +1,67 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background: rgb(2, 0, 36);
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(209, 179, 115, 1) 51%, rgba(0, 212, 255, 1) 100%);
+}
+
 .App {
-    text-align: center
+    text-align: center;
 }
 
 .Display {
-    height: 60xp;
-    background-color: aquamarine;
-    width: 100%
+    background-color: rgb(127, 255, 212, 0.3);
+    border-radius: 20px 20px 0 0;
+    display: flex;
+    width: 379px;
+    height: 80px;
+    font-size: 30px;
+    font-family: 'Dosis', sans-serif;
+    position: absolute;
+    left: 271px;
+    top: 132px;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.Buttons {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+}
+
+.Buttons>button {
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1px solid blue;
+    outline: none;
+    background-color: rgb(255, 255, 255, .3);
+}
+
+.Buttons>button:hover {
+    background-color: rgb(255, 255, 255, .8);
+}
+
+#clear {
+    grid-column: span 2;
+    color: rgb(197, 0, 0);
+}
+
+#delete {
+    color: rgb(197, 0, 0);
+    border-radius: 0 0 0 20px;
+}
+
+#equals {
+    grid-row: span 2;
+    border-radius: 0 0 20px 0;
 }
 
 .result p {
     font-size: 40px;
+    color:
 }
